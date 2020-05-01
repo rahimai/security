@@ -1,6 +1,6 @@
 #include "part3/ECBDecrypt.h"
 #include "part3/EncryptionOracle.h"
-#include <iostream>  //added
+#include <iostream>  
 using namespace std; 
 #include <typeinfo>
 
@@ -18,7 +18,7 @@ std::vector<T> slice(std::vector<T> const &v, int m, int n)
 int get_prefix_size(EncryptionOracle &e){
 	for (int i = 0; i<16; i++){
 		vector<uint8_t> buffer(i+16*5, 'A');
-		auto ciphertext = e.encrypt(buffer); // vector of unsigned char
+		auto ciphertext = e.encrypt(buffer); 
 		vector<vector<unsigned char>> test;
 
 		// create a vector of blocks to check for matching  blocks
@@ -73,7 +73,6 @@ int check_match(vector<uint8_t> vec){
 }
 
 std::string ECBDecrypt::grader_decrypt(EncryptionOracle &e) {
-  // NOTE: Please write your code here.
  
 	int pref_size = get_prefix_size(e);
 	vector<uint8_t> buffer(pref_size+16*2, 'A');
