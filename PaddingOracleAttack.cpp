@@ -23,7 +23,7 @@ void print(vector<uint8_t> x){
 }
 
 std::string PaddingOracleAttack::grader_decrypt(PaddingOracle &o) {
-  
+  // NOTE: Please write your code here.
 
   // first = IV, second = ciphertext
   auto cipher_iv = o.encrypt();
