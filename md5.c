@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <openssl/md5.h>
 
-//http:/mtm.myphoto.com/share/api?token=08d2e52ec0c3118e07a61f01a1f9c181& data
-//MD5(client’s 6-character password || data)
-//&command=deleteall
+
 
 int main(int argc, const char *argv[]) {
 
@@ -12,8 +10,6 @@ int main(int argc, const char *argv[]) {
 
 	MD5_Init(&c);
 
-
-	/* You should implement your length attack here */
        
         // set the state of the desired state, using the token of the URL provided 
         MD5_Update(&c, "0000000000000000000000000000000000000000000000000000000000000000", 64);
